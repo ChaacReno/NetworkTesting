@@ -127,7 +127,7 @@ public class NetworkPlayer : NetworkBehaviour
         ReturnToMenuServerRpc();
     }
 
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void ReturnToMenuServerRpc()
     {
         NetworkManager.Singleton.SceneManager.LoadScene("Scenes/XRMultiplayerSetup", LoadSceneMode.Single);
