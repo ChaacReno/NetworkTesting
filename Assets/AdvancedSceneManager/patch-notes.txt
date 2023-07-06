@@ -1,0 +1,10 @@
+1.9.6
+
+Bugs:
+- Fixed invalid cast in Scene equality check.
+- Possible fix for ctrl selection not working on mac.
+- Fixed AssetRef.path returning .defaultPath in build.
+- Added ProfileUtility.SetProfileAndWaitForSceneGeneration().
+- Fixed bug where ASM would assign only AdvancedSceneManager scene to build settings.
+- Fixed bug where blacklist settings gui would not update when profile is changed, and only when domain is reloaded.
+- Fixed index out of range in CoroutineUtility.
