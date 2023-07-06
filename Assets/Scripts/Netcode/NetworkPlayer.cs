@@ -124,6 +124,6 @@ public class NetworkPlayer : NetworkBehaviour
 
     public override void OnNetworkDespawn()
     {
-        SceneManager.LoadSceneAsync("Scenes/XRMultiplayerSetup");
+        NetworkManager.Singleton.SceneManager.LoadScene("Scenes/XRMultiplayerSetup", LoadSceneMode.Single);
     }
 }
