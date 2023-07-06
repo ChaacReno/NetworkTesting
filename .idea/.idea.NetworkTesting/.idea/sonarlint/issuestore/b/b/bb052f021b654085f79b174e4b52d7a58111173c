@@ -1,0 +1,6 @@
+
+Rcsharpsquid:S3903"5Move 'SceneTransitionHandler' into a named namespace.(Ã­ý„
+`csharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ì·‰m
+fcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(¶áòëüÿÿÿÿ
+acsharpsquid:S2223"EChange the visibility of 'Instance' or make it 'const' or 'readonly'.(ì·‰m
+rcsharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(Ä“±Ï

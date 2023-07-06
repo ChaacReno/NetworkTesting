@@ -9,11 +9,16 @@ public class NetworkPlayer : NetworkBehaviour
 {
     [SerializeField] private GameObject[] eyes;
     [SerializeField] private Vector2 placementArea = new Vector2(-10, 10);
-    
+
     public override void OnNetworkSpawn()
     {
-        base.OnNetworkSpawn();
         DisableClientInput();
+        Unity.Netcode.NetworkManager.Singleton.OnClientDisconnectCallback += ReturnToMenu;
+        if (IsServer&& IsOwner)
+        {
+            SceneLauncher.Instance.LoadScene();
+        }
+        base.OnNetworkSpawn();
     }
 
     private void DisableClientInput()
@@ -122,14 +127,9 @@ public class NetworkPlayer : NetworkBehaviour
         }
     }
 
-    public override void OnNetworkDespawn()
+    public void ReturnToMenu(ulong obj)
     {
-        ReturnToMenuServerRpc();
-    }
-
-    [ServerRpc(RequireOwnership = false)]
-    public void ReturnToMenuServerRpc()
-    {
-        NetworkManager.Singleton.SceneManager.LoadScene("Scenes/XRMultiplayerSetup", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("Scenes/XRMultiplayerSetup", LoadSceneMode.Single);
+        Debug.Log("Return to menu");
     }
 }

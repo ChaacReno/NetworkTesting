@@ -25,20 +25,19 @@ public class SceneLauncher : MonoBehaviour
     public void StartHost()
     {
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(GetLocalIPAddress(),7777);
-        SceneTransitionHandler.Instance.InitializeAsHost = true;
-        LoadScene("Scenes/XRMultiplayerBasketball");
+        NetworkManager.Singleton.StartHost();
     }
 
     public void StartClient()
     {
         NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData("23.233.245.159",7777);
-        SceneTransitionHandler.Instance.InitializeAsHost = false;
-        LoadScene("Scenes/XRMultiplayerBasketball");
+        NetworkManager.Singleton.StartClient();
     }
 
-    private void LoadScene(string sceneName)
+    public void LoadScene()
     {
-        SceneManager.LoadScene(sceneName);
+        Debug.LogError("LoadScene");
+        NetworkManager.Singleton.SceneManager.LoadScene("Scenes/XRMultiplayerBasketball",LoadSceneMode.Single);
     }
     public static string GetLocalIPAddress()
     {
