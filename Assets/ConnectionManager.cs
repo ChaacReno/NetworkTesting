@@ -4,8 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class ConnectionManager : NetworkBehaviour, IPointerClickHandler
 {
-    [ServerRpc]
+    
     public void OnPointerClick(PointerEventData eventData)
+    {
+        DisconnectServerRpc();
+    }
+    
+    [ServerRpc]
+    public void DisconnectServerRpc()
     {
         var playerId = NetworkManager.Singleton.LocalClientId;
         NetworkManager.Singleton.DisconnectClient(playerId);
