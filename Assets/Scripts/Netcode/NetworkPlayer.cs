@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class NetworkPlayer : NetworkBehaviour
 {
+    [SerializeField] private GameObject[] eyes;
     [SerializeField] private Vector2 placementArea = new Vector2(-10, 10);
     
     public override void OnNetworkSpawn()
@@ -16,23 +17,37 @@ public class NetworkPlayer : NetworkBehaviour
 
     private void DisableClientInput()
     {
-        if (IsOwner) return;
-        var clientMoveProvider = GetComponent<NetworkMoveProvider>();
-        var clientControllers = GetComponentsInChildren<ActionBasedController>();
-        var clientTurnProvider = GetComponent<ActionBasedSnapTurnProvider>();
-        var clientHead = GetComponentInChildren<TrackedPoseDriver>();
-        var clientCamera = GetComponentInChildren<Camera>();
-
-        clientCamera.enabled = false;
-        clientMoveProvider.enableInputAction = false;
-        clientTurnProvider.enableTurnLeftRight = false;
-        clientTurnProvider.enableTurnAround = false;
-        clientHead.enabled = false;
-
-        foreach (var controller in clientControllers)
+        if (IsOwner)
         {
-            controller.enableInputActions = false;
-            controller.enableInputTracking = false;
+            HideEyes();
+        }
+        else
+        {
+            var clientMoveProvider = GetComponent<NetworkMoveProvider>();
+            var clientControllers = GetComponentsInChildren<ActionBasedController>();
+            var clientTurnProvider = GetComponent<ActionBasedSnapTurnProvider>();
+            var clientHead = GetComponentInChildren<TrackedPoseDriver>();
+            var clientCamera = GetComponentInChildren<Camera>();
+
+            clientCamera.enabled = false;
+            clientMoveProvider.enableInputAction = false;
+            clientTurnProvider.enableTurnLeftRight = false;
+            clientTurnProvider.enableTurnAround = false;
+            clientHead.enabled = false;
+
+            foreach (var controller in clientControllers)
+            {
+                controller.enableInputActions = false;
+                controller.enableInputTracking = false;
+            }
+        }
+    }
+
+    private void HideEyes()
+    {
+        foreach (var eye in eyes)
+        {
+            eye.SetActive(false);
         }
     }
 
