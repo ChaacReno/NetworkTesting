@@ -14,7 +14,7 @@ public class ConnectionManager : NetworkBehaviour, IPointerClickHandler
     public void DisconnectServerRpc()
     {
         var playerId = NetworkManager.Singleton.LocalClientId;
+
         NetworkManager.Singleton.DisconnectClient(playerId);
-        SceneManager.LoadScene("Scenes/XRMultiplayerSetup");
     }
 }

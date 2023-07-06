@@ -1,6 +1,7 @@
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 using Random = UnityEngine.Random;
 
@@ -119,5 +120,10 @@ public class NetworkPlayer : NetworkBehaviour
         {
             networkObject.RemoveOwnership();
         }
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        SceneManager.LoadSceneAsync("Scenes/XRMultiplayerSetup");
     }
 }
