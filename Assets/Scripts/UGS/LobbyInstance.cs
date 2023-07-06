@@ -26,12 +26,16 @@ namespace UGS
     {
         private Lobby _lobbyInfo;
         
-        private LobbyEventCallbacks _callbacks;
+        //private LobbyEventCallbacks _callbacks;
 
+        // public async Task Host(
+        //     LobbySettings settings, 
+        //     CreateLobbyOptions options = null, 
+        //     LobbyEventCallbacks callbacks = null)
+        // {
         public async Task Host(
             LobbySettings settings, 
-            CreateLobbyOptions options = null, 
-            LobbyEventCallbacks callbacks = null)
+            CreateLobbyOptions options = null)
         {
             if (settings == null)
             {
@@ -40,7 +44,7 @@ namespace UGS
             }
             _lobbyInfo = await LobbyService.Instance.CreateLobbyAsync(settings.lobbyName, settings.maxPlayers, options);
             
-            AssignCallbacks(callbacks);
+            //AssignCallbacks(callbacks);
         }
 
         public Lobby GetLobby()
@@ -48,7 +52,8 @@ namespace UGS
             return _lobbyInfo;
         }
         
-        public async Task JoinById(JoinLobbyByIdOptions options = null, LobbyEventCallbacks callbacks = null)
+        //public async Task JoinById(JoinLobbyByIdOptions options = null, LobbyEventCallbacks callbacks = null)
+        public async Task JoinById(JoinLobbyByIdOptions options = null)
         {
             if (_lobbyInfo == null)
             {
@@ -57,10 +62,11 @@ namespace UGS
             }
             _lobbyInfo = await LobbyService.Instance.JoinLobbyByIdAsync(_lobbyInfo.Id, options);
 
-            AssignCallbacks(callbacks);
+            //AssignCallbacks(callbacks);
         }
         
-        public async Task JoinByCode(JoinLobbyByCodeOptions options = null, LobbyEventCallbacks callbacks = null)
+        //public async Task JoinByCode(JoinLobbyByCodeOptions options = null, LobbyEventCallbacks callbacks = null)
+        public async Task JoinByCode(JoinLobbyByCodeOptions options = null)
         {
             if (_lobbyInfo == null)
             {
@@ -69,14 +75,15 @@ namespace UGS
             }
             _lobbyInfo = await LobbyService.Instance.JoinLobbyByCodeAsync(_lobbyInfo.Id, options);
             
-            AssignCallbacks(callbacks);
+            //AssignCallbacks(callbacks);
         }
         
-        public async Task QuickJoin(QuickJoinLobbyOptions options = null, LobbyEventCallbacks callbacks = null)
+        //public async Task QuickJoin(QuickJoinLobbyOptions options = null, LobbyEventCallbacks callbacks = null)
+        public async Task QuickJoin(QuickJoinLobbyOptions options = null)
         {
             _lobbyInfo = await LobbyService.Instance.QuickJoinLobbyAsync(options);
             
-            AssignCallbacks(callbacks);
+            //AssignCallbacks(callbacks);
         }
 
         public async Task UpdateLobby(UpdateLobbyOptions options)
@@ -94,12 +101,12 @@ namespace UGS
             await LobbyService.Instance.SendHeartbeatPingAsync(_lobbyInfo.Id);
         }
         
-        private async void AssignCallbacks(LobbyEventCallbacks callbacks)
-        {
-            if (callbacks == null) return;
-            _callbacks = callbacks;
-            await Lobbies.Instance.SubscribeToLobbyEventsAsync(_lobbyInfo.Id, _callbacks);
-        }
+        // private async void AssignCallbacks(LobbyEventCallbacks callbacks)
+        // {
+        //     if (callbacks == null) return;
+        //     _callbacks = callbacks;
+        //     await Lobbies.Instance.SubscribeToLobbyEventsAsync(_lobbyInfo.Id, _callbacks);
+        // }
         
         public static async Task<List<Lobby>> QueryLobbies(QueryLobbiesOptions options = null)
         {
