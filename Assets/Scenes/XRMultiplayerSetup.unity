@@ -1460,6 +1460,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5054706852601908262, guid: 8a0c44ab91cbfb343a0f9a8e792bc00c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 663978514
+      objectReference: {fileID: 0}
     - target: {fileID: 5241405785931751104, guid: 8a0c44ab91cbfb343a0f9a8e792bc00c, type: 3}
       propertyPath: m_Name
       value: XRRigMultiplayer
