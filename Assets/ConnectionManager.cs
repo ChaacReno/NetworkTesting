@@ -10,7 +10,7 @@ public class ConnectionManager : NetworkBehaviour, IPointerClickHandler
         DisconnectServerRpc();
     }
     
-    [ServerRpc]
+    [ServerRpc(RequireOwnership = false)]
     public void DisconnectServerRpc()
     {
         var playerId = NetworkManager.Singleton.LocalClientId;
