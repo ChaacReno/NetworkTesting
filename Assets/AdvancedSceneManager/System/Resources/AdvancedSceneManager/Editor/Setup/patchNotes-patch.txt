@@ -1,0 +1,1 @@
+Bugs:\n- Fixed invalid cast in Scene equality check.\n- Possible fix for ctrl selection not working on mac.
