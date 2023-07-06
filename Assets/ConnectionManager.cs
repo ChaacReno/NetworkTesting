@@ -1,12 +1,13 @@
 using Unity.Netcode;
-using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
-public class ConnectionManager : MonoBehaviour, IPointerClickHandler
+public class ConnectionManager : NetworkBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        var playerId = eventData.pointerPress.GetComponent<NetworkPlayer>().OwnerClientId;
+        var playerId = NetworkManager.Singleton.LocalClientId;
         NetworkManager.Singleton.DisconnectClient(playerId);
+        SceneManager.LoadScene("Scenes/XRMultiplayerSetup");
     }
 }
