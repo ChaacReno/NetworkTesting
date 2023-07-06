@@ -423,6 +423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9983510065bb1a43a6c7b5dc0f31ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eyes:
+  - {fileID: 6284979716574805133}
+  - {fileID: 2385150173677076334}
   placementArea: {x: -1, y: 1}
 --- !u!114 &7803261017613493136
 MonoBehaviour:
@@ -1799,6 +1802,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a75bc4ed35db2714e894cb5a630293b6, type: 3}
+--- !u!1 &2385150173677076334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6970243994600405355, guid: a75bc4ed35db2714e894cb5a630293b6, type: 3}
+  m_PrefabInstance: {fileID: 4729490483977340421}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6284979716574805133 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1628681600213891720, guid: a75bc4ed35db2714e894cb5a630293b6, type: 3}
+  m_PrefabInstance: {fileID: 4729490483977340421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7776443483547420876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3047244438938160841, guid: a75bc4ed35db2714e894cb5a630293b6, type: 3}
