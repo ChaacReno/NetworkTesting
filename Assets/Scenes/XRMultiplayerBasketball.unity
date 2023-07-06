@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 47302035}
   - component: {fileID: 47302034}
   m_Layer: 5
-  m_Name: JoinButton
+  m_Name: DisconnectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,9 +227,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1159212674}
-        m_TargetAssemblyTypeName: SceneLauncher, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1159212678}
+        m_TargetAssemblyTypeName: Unity.Netcode.Transports.UTP.UnityTransport, Unity.Netcode.Runtime
+        m_MethodName: DisconnectLocalClient
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

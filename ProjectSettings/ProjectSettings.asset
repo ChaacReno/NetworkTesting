@@ -727,6 +727,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
+    Android: ADVANCED_SCENE_MANAGER
     Standalone: ADVANCED_SCENE_MANAGER
   additionalCompilerArguments: {}
   platformArchitecture: {}
