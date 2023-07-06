@@ -8,6 +8,6 @@ public class ConnectionManager : MonoBehaviour
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        NetworkManager.Singleton.DisconnectClient();
+        //NetworkManager.Singleton.DisconnectClient();
     }
 }
