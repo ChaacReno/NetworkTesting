@@ -9,9 +9,5 @@ public class NetworkStartup : MonoBehaviour
         {
             NetworkManager.Singleton.StartHost();
         }
-        else
-        {
-            NetworkManager.Singleton.StartClient();
-        }
     }
 }

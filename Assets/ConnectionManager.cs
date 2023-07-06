@@ -1,7 +1,8 @@
 using Unity.Netcode;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ConnectionManager : NetworkBehaviour, IPointerClickHandler
+public class ConnectionManager : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {

@@ -136,8 +136,6 @@ GameObject:
   - component: {fileID: 47302036}
   - component: {fileID: 47302035}
   - component: {fileID: 47302034}
-  - component: {fileID: 47302038}
-  - component: {fileID: 47302039}
   m_Layer: 5
   m_Name: DisconnectButton
   m_TagString: Untagged
@@ -267,34 +265,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47302032}
   m_CullTransparentMesh: 1
---- !u!114 &47302038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47302032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d0a7dfc97a41394e8c1993e977de35c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &47302039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47302032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3708496075
-  AlwaysReplicateAsRoot: 0
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &108843441 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6018034991063252182, guid: 3db70fe2d5ce3dc4aade055e0c6c7391, type: 3}
@@ -416,7 +386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &727886363
 Transform:
   m_ObjectHideFlags: 0

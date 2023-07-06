@@ -14,13 +14,8 @@ public class NetworkPlayer : NetworkBehaviour
     {
         DisableClientInput();
         Unity.Netcode.NetworkManager.Singleton.OnClientDisconnectCallback += ReturnToMenu;
-        if (IsServer&& IsOwner)
-        {
-            SceneLauncher.Instance.LoadScene();
-        }
         base.OnNetworkSpawn();
     }
-
     private void DisableClientInput()
     {
         if (IsOwner)
