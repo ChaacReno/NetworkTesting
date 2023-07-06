@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class ConnectionManager : NetworkBehaviour, IPointerClickHandler
 {
+    [ServerRpc]
     public void OnPointerClick(PointerEventData eventData)
     {
         var playerId = NetworkManager.Singleton.LocalClientId;
