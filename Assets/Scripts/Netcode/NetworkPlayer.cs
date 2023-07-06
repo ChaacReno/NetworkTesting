@@ -34,8 +34,6 @@ public class NetworkPlayer : NetworkBehaviour
             controller.enableInputActions = false;
             controller.enableInputTracking = false;
         }
-
-        Debug.LogError("Disable client input");
     }
 
     private void Start()
@@ -52,19 +50,13 @@ public class NetworkPlayer : NetworkBehaviour
     {
         if (eventArgs.interactableObject.transform.CompareTag("Grabbable"))
         {
-            Debug.LogError("Tag grabbable");
             if (!IsClient || !IsOwner) return;
             NetworkObject networkObjectSelected =
                 eventArgs.interactableObject.transform.GetComponent<NetworkObject>();
             if (networkObjectSelected != null)
             {
-                Debug.LogError("Request ownership");
                 //Request ownership from the server
                 RequestGrabbableOwnershipServerRpc(OwnerClientId, networkObjectSelected);
-            }
-            else
-            {
-                Debug.LogError("Object null");
             }
         }
     }

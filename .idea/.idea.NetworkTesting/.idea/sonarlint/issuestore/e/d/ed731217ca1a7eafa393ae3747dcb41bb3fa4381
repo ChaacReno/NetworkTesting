@@ -1,6 +1,0 @@
-
-Ucsharpsquid:S3903	",Move 'SceneLauncher' into a named namespace.(»èÈ»ÿÿÿÿÿ8 Ü±’1
-mcsharpsquid:S1104"DMake this field 'private' and encapsulate it in a 'public' property.(ÀóŒÎıÿÿÿÿ8 Ü±’1
-ncsharpsquid:S2223"EChange the visibility of 'Instance' or make it 'const' or 'readonly'.(ÀóŒÎıÿÿÿÿ8 Ü±’1
-ycsharpsquid:S2696"UMake the enclosing instance method 'static' or remove this set on the 'static' field.(Ä“±Ï8£Ü±’1
-]csharpsquid:S1125"5'System.Exception' should not be thrown by user code.(ç½³ûÿÿÿÿ8£Ü±’1

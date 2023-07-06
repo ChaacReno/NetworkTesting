@@ -1,8 +1,6 @@
 
 ¤
 tLibrary/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Controllers/ActionBasedController.cs,0\9\0931d2b368cea9d715d3982a681bf7f06fdff9b5
-X
-(Assets/Scripts/Netcode/NetworkStartup.cs,e\d\ed90c50867f9fbfc7650cfe9c85b523a5b7bcad8
 J
 Assets/AutoStartSession.cs,8\8\88b3fa8ed7427d896142d85b23b8080ef5608124
 ‡
@@ -17,8 +15,6 @@ VLibrary/PackageCache/com.unity.netcode.gameobjects@1.2.0/Runtime/Logging/Networ
 YLibrary/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/UI/XRUIInputModule.cs,0\d\0d0fe7e64a7f0c81452c9a1d0060693f44d4634e
 ®
 ~Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Locomotion/Continuous/ActionBasedContinuousMoveProvider.cs,4\7\47c0890bd8028f96699a34b9af1f0bc93a92cc49
-b
-2Assets/Scripts/Utilities/SceneTransitionHandler.cs,b\b\bb052f021b654085f79b174e4b52d7a58111173c
 «
 {Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Transformers/XRSingleGrabFreeTransformer.cs,c\5\c59935002a6f508fd7a003d54e887ffb115531e1
 —
@@ -29,29 +25,15 @@ bLibrary/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Locomotion/
 WLibrary/PackageCache/com.unity.netcode.gameobjects@1.2.0/Components/NetworkRigidbody.cs,1\c\1cc1c3393a8150fb643d0ce4d1d063d7b42f6092
 `
 0Assets/Scripts/Netcode/ClientNetworkRigidbody.cs,f\e\fe8dee40aa208caaddd1aaef2e5aa0597265cb3b
-Z
-*Assets/Scripts/Netcode/NetworkGrabbable.cs,9\f\9f43d6d55ea1057a84917b62b10b95810e6a63ca
 £
 sLibrary/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactables/XRBaseInteractable.cs,2\e\2e76a3c9bc77cbef7b471af4dc0bc21c0de7c072
-G
-Assets/SceneLauncher.cs,e\d\ed731217ca1a7eafa393ae3747dcb41bb3fa4381
 £
 sLibrary/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/Interactables/XRGrabInteractable.cs,a\8\a8ac8a14ac99c7a2665f29eaae5862b9c9d93d13
 J
 Assets/OwnershipManager.cs,0\2\029efa31f1702bf9696f21d4798f7f87434c200a
-\
-,Assets/Scripts/Utilities/GrabbableCreator.cs,2\3\23fd4f8d5035acd7e054a6e84f1f31bf606d388f
-]
--Assets/Scripts/Netcode/NetworkMoveProvider.cs,4\8\48cd22d9d287e2b384621a9cadaa6fd502fe70eb
 –
 fLibrary/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Interaction/XRInteractionEvents.cs,e\7\e760b0b37df732cb77383f0b4415ae4eec8f1d14
 ‰
 YLibrary/PackageCache/com.unity.netcode.gameobjects@1.2.0/Runtime/Core/NetworkBehaviour.cs,b\8\b82be2aa7990ed0cf983b2204c4db95e5ca60a98
-F
-Assets/ScoreCounter.cs,0\6\063f2d3fec9e7989e791101bd3b264e6f6cb6367
 †
 VLibrary/PackageCache/com.unity.netcode.gameobjects@1.2.0/Runtime/Core/NetworkObject.cs,9\2\924cd9256dd9eae9c287f7be65608cfed462e60c
-b
-2Assets/Scripts/Utilities/ClientNetworkTransform.cs,7\0\7057e7ea2e11ca627f6a74637175eaddd11145b7
-W
-'Assets/Scripts/Netcode/NetworkPlayer.cs,d\7\d758ab43772ff202c12ba47535f690c34f86e065

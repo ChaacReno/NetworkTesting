@@ -13,15 +13,15 @@ public class AutoStartSession : MonoBehaviour
     
     public void Start()
     {
-        Debug.Log(GetLocalIPAddress());
+        UnityTransport unityTransport = NetworkManager.Singleton.GetComponent<UnityTransport>();
         if (ClonesManager.IsClone())
         {
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData("23.233.245.159",7777);
+            unityTransport.SetConnectionData("23.233.245.159",7777);
             StartCoroutine(WaitForHost());
         }
         else
         {
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(GetLocalIPAddress(),7777);
+            unityTransport.SetConnectionData(GetLocalIPAddress(),7777);
             SceneLauncher.Instance.StartHost();
         }
 
