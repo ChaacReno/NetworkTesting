@@ -124,6 +124,12 @@ public class NetworkPlayer : NetworkBehaviour
 
     public override void OnNetworkDespawn()
     {
+        ReturnToMenuServerRpc();
+    }
+
+    [ServerRpc]
+    public void ReturnToMenuServerRpc()
+    {
         NetworkManager.Singleton.SceneManager.LoadScene("Scenes/XRMultiplayerSetup", LoadSceneMode.Single);
     }
 }
