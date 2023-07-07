@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Settings/AdvancedSceneManager/Resources/AdvancedSceneManager/AdvancedSceneManager.unity
     guid: a0d992ae874190e4c8cb17a0054be263
+  - enabled: 1
+    path: Assets/Scenes/RelayAndLobby.unity
+    guid: aff51f5d3887db34084c5fc47d28e284
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 65a23b83caecc67459c319a1bd5a2850, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f3de137765e00f8458cf6748a503f9c1, type: 2}
