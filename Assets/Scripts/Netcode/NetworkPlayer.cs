@@ -16,7 +16,16 @@ public class NetworkPlayer : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         DisableClientInput();
+        Unity.Netcode.NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnect;
         base.OnNetworkSpawn();
+    }
+
+    public void OnClientDisconnect(ulong clientId)
+    {
+        if (clientId == NetworkManager.ServerClientId)
+        {
+            SceneManager.LoadSceneAsync("XRMultiplayerSetup");
+        }
     }
     
     private void DisableClientInput()
@@ -123,11 +132,5 @@ public class NetworkPlayer : NetworkBehaviour
         {
             networkObject.RemoveOwnership();
         }
-    }
-
-    public void ReturnToMenu(ulong obj)
-    {
-        SceneManager.LoadSceneAsync("Scenes/XRMultiplayerSetup", LoadSceneMode.Single);
-        Debug.Log("Return to menu");
     }
 }
