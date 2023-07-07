@@ -1,27 +1,40 @@
+using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Composites;
 using Random = UnityEngine.Random;
 
 public class NetworkPlayer : NetworkBehaviour
 {
     [SerializeField] private GameObject[] eyes;
     [SerializeField] private Vector2 placementArea = new Vector2(-10, 10);
-    
+    private bool init;
+
     public override void OnNetworkSpawn()
     {
-        base.OnNetworkSpawn();
         DisableClientInput();
+        Unity.Netcode.NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnect;
+        base.OnNetworkSpawn();
     }
 
+    public void OnClientDisconnect(ulong clientId)
+    {
+        if (clientId == NetworkManager.ServerClientId)
+        {
+            SceneManager.LoadSceneAsync("XRMultiplayerSetup");
+        }
+    }
+    
     private void DisableClientInput()
     {
         if (IsOwner)
         {
             HideEyes();
         }
-        else
+        else if(!init)
         {
             var clientMoveProvider = GetComponent<NetworkMoveProvider>();
             var clientControllers = GetComponentsInChildren<ActionBasedController>();

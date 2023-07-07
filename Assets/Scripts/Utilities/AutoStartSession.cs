@@ -7,6 +7,7 @@ using UnityEngine;
 using ParrelSync;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
+using UnityEngine.SceneManagement;
 
 public class AutoStartSession : MonoBehaviour
 {
@@ -29,9 +30,10 @@ public class AutoStartSession : MonoBehaviour
     
     public IEnumerator WaitForHost()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         SceneLauncher.Instance.StartClient();
     }
+
     public static string GetLocalIPAddress()
     {
         var host = Dns.GetHostEntry(Dns.GetHostName());
