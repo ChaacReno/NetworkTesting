@@ -11,24 +11,24 @@ namespace UGS.Sample
 {
     public class AutoLobbyRelayNgo : MonoBehaviour
     {
-        public Button startHost;
-        public Button quickJoin;
+        public Button StartHost;
+        public Button QuickJoin;
 
-        public int maxPlayers = 2;
-        public UnityEvent handleHostConnected = new(), handleClientConnected = new();
+        public int MaxPlayers = 2;
+        public UnityEvent HandleHostConnected = new(), HandleClientConnected = new();
         private LobbyInstance _lobby;
         private RelayInstance _relay;
 
         private void Start()
         {
-            startHost.onClick.AddListener(HandleStartHost);
-            quickJoin.onClick.AddListener(HandleQuickJoin);
+            StartHost.onClick.AddListener(HandleStartHost);
+            QuickJoin.onClick.AddListener(HandleQuickJoin);
         }
 
         private async void HandleStartHost()
         {
             _relay = new RelayInstance();
-            await _relay.CreateAllocation(maxPlayers);
+            await _relay.CreateAllocation(MaxPlayers);
             var options = new CreateLobbyOptions
             {
                 Data = new Dictionary<string, DataObject>()
@@ -47,7 +47,7 @@ namespace UGS.Sample
             StartCoroutine(HeartbeatLobby());
             
             NetworkManager.Singleton.StartHost();
-            handleHostConnected.Invoke();
+            HandleHostConnected.Invoke();
         }
 
         private IEnumerator HeartbeatLobby()
@@ -68,7 +68,7 @@ namespace UGS.Sample
             await _relay.JoinAllocation(code);
             
             NetworkManager.Singleton.StartClient();
-            handleClientConnected.Invoke();
+            HandleClientConnected.Invoke();
         }
         
     }
