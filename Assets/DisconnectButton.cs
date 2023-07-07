@@ -1,7 +1,6 @@
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit.UI;
 
 public class DisconnectButton : NetworkBehaviour, IPointerEnterHandler, IPointerClickHandler
@@ -9,7 +8,7 @@ public class DisconnectButton : NetworkBehaviour, IPointerEnterHandler, IPointer
     private GameObject player;
     public void OnPointerClick(PointerEventData eventData)
     {
-        DisconnectServerRpc();
+        DisconnectClientRpc();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -26,16 +25,9 @@ public class DisconnectButton : NetworkBehaviour, IPointerEnterHandler, IPointer
         }
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    public void DisconnectServerRpc()
+    [ClientRpc]
+    public void DisconnectClientRpc()
     {
-        for (var i = NetworkManager.Singleton.ConnectedClientsIds.Count - 1; i >= 0; i--)
-        {
-            var id = NetworkManager.Singleton.ConnectedClientsIds[i];
-            if (id != NetworkManager.Singleton.LocalClientId)
-            {
-                NetworkManager.Singleton.DisconnectClient(id);
-            }
-        }
+        NetworkManager.Singleton.Shutdown();
     }
 }
