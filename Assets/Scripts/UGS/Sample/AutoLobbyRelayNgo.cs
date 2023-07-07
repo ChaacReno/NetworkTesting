@@ -61,16 +61,24 @@ namespace UGS.Sample
         
         private async void HandleQuickJoin()
         {
-            _lobby = new LobbyInstance();
-
-            Debug.LogError(LobbyInstance.QueryLobbies());
-            await _lobby.QuickJoin();
-            var code = _lobby.GetLobby().Data["code"].Value;
-            _relay = new RelayInstance();
-            await _relay.JoinAllocation(code);
+            try
+            {
+                await LobbyService.Instance.QuickJoinLobbyAsync();
+            }
+            catch (LobbyServiceException e)
+            {
+                Debug.Log(e);
+            }
             
-            NetworkManager.Singleton.StartClient();
-            HandleClientConnected.Invoke();
+            // _lobby = new LobbyInstance();
+            //
+            // await _lobby.QuickJoin();
+            // var code = _lobby.GetLobby().Data["code"].Value;
+            // _relay = new RelayInstance();
+            // await _relay.JoinAllocation(code);
+            //
+            // NetworkManager.Singleton.StartClient();
+            // HandleClientConnected.Invoke();
         }
         
     }
