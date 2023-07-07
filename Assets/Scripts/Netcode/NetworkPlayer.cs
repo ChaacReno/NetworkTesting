@@ -16,24 +16,9 @@ public class NetworkPlayer : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         DisableClientInput();
-        Unity.Netcode.NetworkManager.Singleton.OnClientDisconnectCallback += ReturnToMenu;
         base.OnNetworkSpawn();
     }
     
-    public IEnumerator WaitForDisconnect()
-    {
-        if (IsClient)
-        {
-            Debug.LogError("Disconnect");
-            yield return new WaitForSeconds(2);
-            Disconnect();
-            SceneManager.LoadScene("XRMultiplayerSetup");
-        }
-    }
-    public void Disconnect()
-    {
-        NetworkManager.Singleton.Shutdown();
-    }
     private void DisableClientInput()
     {
         if (IsOwner)
