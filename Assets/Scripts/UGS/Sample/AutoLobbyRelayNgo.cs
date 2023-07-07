@@ -62,6 +62,8 @@ namespace UGS.Sample
         private async void HandleQuickJoin()
         {
             _lobby = new LobbyInstance();
+
+            Debug.LogError(LobbyInstance.QueryLobbies());
             await _lobby.QuickJoin();
             var code = _lobby.GetLobby().Data["code"].Value;
             _relay = new RelayInstance();

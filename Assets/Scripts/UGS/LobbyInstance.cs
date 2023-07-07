@@ -61,7 +61,7 @@ namespace UGS
 
             _lobbyInfo = await LobbyService.Instance.JoinLobbyByIdAsync(_lobbyInfo.Id, options);
 
-            //AssignCallbacks(callbacks);
+            AssignCallbacks(callbacks);
         }
 
         public async Task JoinByCode(JoinLobbyByCodeOptions options = null, LobbyEventCallbacks callbacks = null)
