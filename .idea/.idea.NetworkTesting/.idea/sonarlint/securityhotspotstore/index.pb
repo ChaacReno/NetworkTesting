@@ -35,3 +35,5 @@ b
 -Assets/Scripts/Netcode/NetworkMoveProvider.cs,4\8\48cd22d9d287e2b384621a9cadaa6fd502fe70eb
 b
 2Assets/Scripts/Utilities/SceneTransitionHandler.cs,b\b\bb052f021b654085f79b174e4b52d7a58111173c
+K
+Assets/DontDestroyOnLoad.cs,6\c\6c867b72676e635398471b6ed3e8d4c9985bebd9

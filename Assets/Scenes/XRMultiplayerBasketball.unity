@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 47302036}
   - component: {fileID: 47302035}
   - component: {fileID: 47302034}
+  - component: {fileID: 47302038}
   m_Layer: 5
   m_Name: DisconnectButton
   m_TagString: Untagged
@@ -265,6 +266,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47302032}
   m_CullTransparentMesh: 1
+--- !u!114 &47302038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47302032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0a7dfc97a41394e8c1993e977de35c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &108843441 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6018034991063252182, guid: 3db70fe2d5ce3dc4aade055e0c6c7391, type: 3}
@@ -1037,6 +1050,7 @@ GameObject:
   - component: {fileID: 1956601859}
   - component: {fileID: 1956601858}
   - component: {fileID: 1956601857}
+  - component: {fileID: 1956601862}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1146,6 +1160,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 2.43}
   m_SizeDelta: {x: 3, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1956601862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956601856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 4069993793
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &919132149367984497 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 98943106418924956, guid: 3db70fe2d5ce3dc4aade055e0c6c7391, type: 3}
